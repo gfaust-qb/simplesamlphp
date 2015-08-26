@@ -15,6 +15,30 @@
             "email": "olav.morken@uninett.no"
         }
     ],
+    "repositories": {
+        "gfaust-qb": {
+            "type": "package",
+            "package": {
+                "name": "gfaust-qb/xmlseclibs",
+                "version": "2.0.0",
+                "source": {
+                    "url": "https://github.com/gfaust-qb/xmlseclibs",
+                    "type": "git",
+                    "reference": "Specified_Exception"
+                }
+            },
+
+            "package": {
+              "name":"gfaust-qb/saml2",
+          "version": "2.0.0",
+                          "source": {
+                              "url": "https://github.com/gfaust-qb/saml2",
+                              "type": "git",
+                              "reference": "master"
+                          }
+            }
+        }
+    },
     "autoload": {
         "psr-0": {
             "SimpleSAML": "lib/"
@@ -23,8 +47,8 @@
     },
     "require": {
         "php": ">=5.3",
-        "simplesamlphp/saml2": "~1.5.3",
-        "robrichards/xmlseclibs": "~1.4.1",
+        "gfaust-qb/saml2": "*",
+        "gfaust-qb/xmlseclibs": "*",
         "whitehat101/apr1-md5": "~1.0"
     },
     "require-dev": {
