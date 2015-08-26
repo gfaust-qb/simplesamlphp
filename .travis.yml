@@ -10,7 +10,7 @@ matrix:
   allow_failures:
   - php: hhvm
   - php: 7.0
-before_script: composer install --dev
+before_script: composer install --dev --with-dependencies
 script: phpunit --configuration tools/phpunit
 after_script:
 - if [[ "$TRAVIS_PHP_VERSION" == "5.6" ]]; then php vendor/bin/coveralls -v; fi

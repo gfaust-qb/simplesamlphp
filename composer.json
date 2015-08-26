@@ -19,8 +19,8 @@
         "gfaust-qb": {
             "type": "package",
             "package": {
-                "name": "gfaust-qb/xmlseclibs",
-                "version": "2.0.0",
+                "name": "robrichards/xmlseclibs",
+                "version": "3.0.0",
                 "source": {
                     "url": "https://github.com/gfaust-qb/xmlseclibs",
                     "type": "git",
@@ -29,8 +29,8 @@
             },
 
             "package": {
-              "name":"gfaust-qb/saml2",
-          "version": "2.0.0",
+              "name":"simplesamlphp/saml2",
+          "version": "3.0.0",
                           "source": {
                               "url": "https://github.com/gfaust-qb/saml2",
                               "type": "git",
