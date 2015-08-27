@@ -25,7 +25,12 @@
           "url" : "https://github.com/gfaust-qb/xmlseclibs",
           "type" : "git",
           "reference" : "Specified_Exception"
-        }
+        },
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src/"
+                }
+            }
       }
     },
     {
