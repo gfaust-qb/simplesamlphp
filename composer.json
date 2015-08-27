@@ -17,34 +17,30 @@
   ],
   "repositories" : [
     {
-      "gfaust-qb" :
-        {
-          "type" : "package",
-          "package" : {
-            "name" : "robrichards/xmlseclibs",
-            "version" : "3.0.0",
-            "source" : {
-              "url" : "https://github.com/gfaust-qb/xmlseclibs",
-              "type" : "git",
-              "reference" : "Specified_Exception"
-            }
-          }
-        },
-    "gfaust-qb" :
-        {
-          "type" : "package",
-          "package" : {
-            "name" : "simplesamlphp/saml2",
-            "version" : "3.0.0",
-            "source" : {
-              "url" : "https://github.com/gfaust-qb/saml2",
-              "type" : "git",
-              "reference" : "master"
-            }
-          }
+      "type" : "package",
+      "package" : {
+        "name" : "robrichards/xmlseclibs",
+        "version" : "3.0.0",
+        "source" : {
+          "url" : "https://github.com/gfaust-qb/xmlseclibs",
+          "type" : "git",
+          "reference" : "Specified_Exception"
         }
-
+      }
+    },
+    {
+      "type" : "package",
+      "package" : {
+        "name" : "simplesamlphp/saml2",
+        "version" : "3.0.0",
+        "source" : {
+          "url" : "https://github.com/gfaust-qb/saml2",
+          "type" : "git",
+          "reference" : "master"
+        }
+      }
     }
+
   ],
   "autoload" : {
     "psr-0" : {
