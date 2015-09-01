@@ -6,11 +6,12 @@
  * This endpoint handles both logout requests and logout responses.
  */
 
-if (!array_key_exists('PATH_INFO', $_SERVER)) {
+$pathInfo = SimpleSAML\Utils\HTTP::getPathInfo();
+if (empty($pathInfo)) {
 	throw new SimpleSAML_Error_BadRequest('Missing authentication source ID in logout URL');
 }
 
-$sourceId = substr($_SERVER['PATH_INFO'], 1);
+$sourceId = substr($pathInfo, 1);
 
 $source = SimpleSAML_Auth_Source::getById($sourceId);
 if ($source === NULL) {

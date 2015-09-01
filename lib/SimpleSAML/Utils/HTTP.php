@@ -678,9 +678,8 @@ class HTTP
     {
         $url = self::getSelfURLHost();
         $url .= $_SERVER['SCRIPT_NAME'];
-        if (isset($_SERVER['PATH_INFO'])) {
-            $url .= $_SERVER['PATH_INFO'];
-        }
+        $pathInfo = self::getPathInfo();
+        $url .= $pathInfo;
         return $url;
     }
 
@@ -1023,5 +1022,22 @@ class HTTP
         $p->data['post'] = $data;
         $p->show();
         exit(0);
+    }
+
+    /**
+     * Get the value of $_SERVER['PATH_INFO'] or an empty string if it is not set.
+     *
+     * @todo Include method to set PATH_INFO if it is not set due to rewriting.
+     * @return string
+     *
+     * @author gfaust-qb
+     */
+    public static function getPathInfo()
+    {
+        $pathInfo = '';
+        if (array_key_exists('PATH_INFO', $_SERVER) && isset($_SERVER['PATH_INFO'])) {
+            $pathInfo = $_SERVER['PATH_INFO'];
+        }
+        return $pathInfo;
     }
 }

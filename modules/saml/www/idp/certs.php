@@ -15,7 +15,7 @@ if ($config->getBoolean('admin.protectmetadata', false)) {
 $idpentityid = $metadata->getMetaDataCurrentEntityID('saml20-idp-hosted');
 $idpmeta = $metadata->getMetaDataConfig($idpentityid, 'saml20-idp-hosted');
 
-switch($_SERVER['PATH_INFO']) {
+switch(SimpleSAML\Utils\HTTP::getPathInfo()) {
 	case '/new_idp.crt':
 		$certInfo = SimpleSAML\Utils\Crypto::loadPublicKey($idpmeta, FALSE, 'new_');
 		break;
@@ -29,7 +29,7 @@ switch($_SERVER['PATH_INFO']) {
 		throw new SimpleSAML_Error_NotFound('Unknown certificate.');
 }
 
-header('Content-Disposition: attachment; filename='.substr($_SERVER['PATH_INFO'], 1));
+header('Content-Disposition: attachment; filename='.substr(SimpleSAML\Utils\HTTP::getPathInfo(), 1));
 header('Content-Type: application/x-x509-ca-cert');
 echo $certInfo['PEM'];
 exit(0);

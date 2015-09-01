@@ -40,11 +40,12 @@ $mimeTypes = array(
 
 try {
 
-    if (empty($_SERVER['PATH_INFO'])) {
+    $pathInfo = SimpleSAML\Utils\HTTP::getPathInfo();
+    if (empty($pathInfo)) {
         throw new SimpleSAML_Error_NotFound('No PATH_INFO to module.php');
     }
 
-    $url = $_SERVER['PATH_INFO'];
+    $url = $pathInfo;
     assert('substr($url, 0, 1) === "/"');
 
     /* clear the PATH_INFO option, so that a script can detect whether it is called with anything following the

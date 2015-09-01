@@ -8,11 +8,12 @@ if (!array_key_exists('TARGET', $_REQUEST)) {
 	throw new SimpleSAML_Error_BadRequest('Missing TARGET parameter.');
 }
 
-if (!array_key_exists('PATH_INFO', $_SERVER)) {
+$pathInfo = SimpleSAML\Utils\HTTP::getPathInfo();
+if (empty($pathInfo)) {
     throw new SimpleSAML_Error_BadRequest('Missing authentication source ID in assertion consumer service URL');
 }
 
-$sourceId = $_SERVER['PATH_INFO'];
+$sourceId = $pathInfo;
 $end = strpos($sourceId, '/', 1);
 if ($end === FALSE) {
 	$end = strlen($sourceId);
